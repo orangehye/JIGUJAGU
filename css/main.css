@@ -1,0 +1,1215 @@
+@charset "utf-8";
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: NotoSans;
+  src: url(../fonts/NotoSansKR-VariableFont_wght.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+img {
+  vertical-align: top;
+}
+input {
+  outline: none;
+  border: none;
+}
+/* 공통스타일 */
+body {
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+}
+.container {
+  max-width: 1470px;
+  width: 100%;
+  margin: 0 auto;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 탑배너영역 */
+.top-banner {
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+.top-banner .sw-top {
+}
+.top-banner .sw-top .swiper-wrapper {
+}
+.top-banner .sw-top .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.top-banner .sw-top .swiper-wrapper .swiper-slide a {
+  display: block;
+  width: 100%;
+}
+.top-banner .sw-top .swiper-wrapper .swiper-slide a img {
+  display: block;
+  width: 100%;
+  height: 50px;
+  object-fit: cover;
+}
+.top-banner .x-btn {
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+.top-banner .x-btn img {
+  width: 32px;
+  height: 32px;
+}
+.top-banner .slide-nav {
+  width: 50px;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 10;
+}
+.top-banner .slide-nav .swiper-pagination-bullet {
+  float: left;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 0;
+  height: 4px;
+  width: 10px;
+}
+.top-banner
+  .slide-nav
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 20px;
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 2px;
+}
+
+/* .all-menu {
+    opacity: 0;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+}
+.all-menu a {
+    display: block;
+}
+@media all and (max-width: 1160.98px) {
+    .all-menu {
+        overflow: hidden;
+        left: 30px;
+        top: 15px;
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        background: url(../images/btn-menu-line.png) no-repeat center;
+        background-size: 25px;
+        opacity: 1;
+        text-indent: -9999px;
+        z-index: 11;
+    }
+
+} */
+
+/* 헤더영역 */
+.header {
+  /* position: fixed;
+  top: 0; */
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+}
+.header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.header .container {
+  position: relative;
+  height: 79px;
+}
+
+/* 메뉴영역 */
+.header .logo {
+  float: left;
+  padding-top: 20px;
+}
+.header .logo a {
+  display: block;
+  font-size: 0;
+  width: 111px;
+  height: 42px;
+  overflow: hidden;
+  background: url(../images/logo_new.png);
+}
+.header .nav {
+  display: inline-block;
+  margin-left: 70px;
+}
+.header .nav .menu {}
+.header .nav .menu > li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  z-index: 3;
+}
+.header .nav .menu > li > a {
+  float: left;
+  /* padding: 30px 0; */
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  height: 74px;
+  line-height: 74px;
+  color: #777;
+  letter-spacing: -0.45px;
+  margin-right: 50px;
+  transition: color 0.3s;
+  z-index: 3;
+}
+.header .nav .menu > li > a span {
+  position: relative;
+  z-index: 4;
+}
+.header .nav .menu > li:hover > a {
+  color: #f9ce42;
+}
+.header .nav .menu > li .menu-submenu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 140px;
+  transform: translateX(-35%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 84px 0 40px 0;
+}
+.header .nav .menu > li .menu-submenu.last-sub {
+  transform: translateX(-28%);
+}
+.header .nav .menu > li:hover .menu-submenu {
+  opacity: 1;
+  visibility: visible;
+}
+.header .nav .menu .menu-submenu li {
+  margin-top: 30px;
+}
+.header .nav .menu .menu-submenu li:first-child {
+  margin: 0;
+}
+.header .nav .menu .menu-submenu li:hover a {
+  color: #f9ce42;
+}
+.header .nav .menu .menu-submenu li a {
+  display: block;
+  text-align: center;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+  color: #777;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+}
+/* //메뉴영역 */
+
+/* 아이콘영역 */
+.icon {
+  float: right;
+  width: 250px;
+  margin-top: 25px;
+}
+.icon ul {
+}
+.icon ul li {
+  float: left;
+}
+.icon ul li > a {
+  display: block;
+}
+.icon ul li img {
+  margin-right: 35px;
+}
+.icon ul .search {
+  transition: opacity .3s ease;
+}
+.icon ul .search .search-box {
+  display: none;
+  position: absolute;
+  width: 328px;
+  height: 188px;
+  top: 65px;
+  /* left: 0; */
+  right: 0;
+  z-index: 30;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 5px 5px 15px 0px rgba(170, 170, 170, 0.4);
+}
+.icon ul .search .search-box.active {
+  display: block;
+}
+.icon ul .search .search-box .top-search {
+  padding: 5px 0;
+}
+.icon ul .search .search-box .top-search h4 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #777;
+}
+.icon ul .search .search-box .top-search button {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  /* width: 17px;
+    height: 19px; */
+  font-size: 12px;
+  font-weight: 600;
+  padding: 1px 3px;
+  background-color: #333;
+  color: #fff;
+  line-height: 1;
+}
+.icon ul .search .search-box .top-search button:hover {
+  color: #000;
+}
+.icon ul .search .search-box fieldset {
+  border: none;
+  vertical-align: top;
+}
+.icon ul .search .search-box fieldset legend {
+  visibility: hidden;
+  position: absolute;
+  left: -999999px;
+  top: -99999px;
+  width: 0;
+  height: 0;
+  line-height: 0;
+}
+.icon ul .search .search-box fieldset .search-form {
+  position: relative;
+  margin: 7px 0;
+  border-bottom: 1px solid #ccc;
+  background-size: 20px 20px;
+}
+.icon ul .search .search-box fieldset .search-form #keyword {
+  width: 90%;
+  height: 31px;
+  padding: 0;
+  border: 0;
+  border-bottom: 0;
+  text-indent: 10px;
+  line-height: 32px;
+  font-size: 12px;
+  color: #7c8389;
+  background-color: #fff;
+}
+.icon ul .search .search-box fieldset .search-form .search-icon {
+  background-color: transparent;
+  padding: 0;
+  border-bottom: 0;
+  height: auto;
+  width: 20px;
+  transform: translateX(-5px) translateY(5px);
+}
+.icon ul .search .search-box p {
+  font-size: 11px;
+  padding-bottom: 0.5rem;
+  color: #777777;
+}
+.icon ul .search .search-box .search-hot-keyword {
+  /* background-color: #f8f8f8; */
+}
+.icon ul .search .search-box .search-hot-keyword a {
+  float: left;
+  padding: 3px 7px 3px 7px;
+  font-size: 13px;
+  font-weight: 600;
+  width: auto;
+  height: auto;
+  letter-spacing: -0.45px;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  color: #777777;
+}
+.icon ul .search .search-box .search-hot-keyword a:hover {
+  color: #dd101a;
+  border-color: #dd101a;
+}
+.icon ul .cart .ico-cart {
+  display: none;
+  position: relative;
+  width: 55px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 5px;
+  transform: translateX(-16px) translateY(10px);
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  z-index: 50;
+}
+.icon ul .cart .ico-cart:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  background-color: #000;
+}
+.icon ul .cart:hover .ico-cart {
+  display: block;
+}
+.icon ul .user .ico-user {
+  position: absolute;
+  /* position: absolute를 쓰면 호버했을 때 떠있기 때문에 위치 변경이 되지 않는다. */
+  display: none;
+  width: 60px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 5px;
+  transform: translateX(-19px) translateY(10px);
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  z-index: 50;
+}
+.icon ul .user .ico-user:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  background-color: #000;
+}
+.icon ul .user:hover .ico-user {
+  display: block;
+}
+.icon ul .login .ico-login {
+  display: none;
+  position: relative;
+  width: 45px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 5px;
+  transform: translateX(-14px) translateY(10px);
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  z-index: 50;
+}
+.icon ul .login .ico-login:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  background-color: #000;
+}
+.icon ul .login:hover .ico-login {
+  display: block;
+}
+/* 헤더영역 반응형 */
+/* @media screen and (max-width:1400px) {
+  .header .container {
+    max-width: 1370px;
+  }
+}
+@media screen and (max-width:1161px) {
+  .header {
+    height: 80px;
+  }
+  .header .nav {
+    display: inline-block;
+    margin-left: 70px;
+  }
+  .header .nav .menu > li:nth-child(1) {
+    width: 40px;
+  }
+  .header .nav .menu > li:nth-child(2) {
+    width: 40px;
+  }
+  .header .nav .menu > li:nth-child(3) {
+    width: 50px;
+  }
+  .header .nav .menu > li:nth-child(4) {
+    width: 75px;
+  }
+  .header .nav .menu > li:nth-child(5) {
+    width: 55px;
+  }
+  .header .nav .menu > li:nth-child(6) {
+    width: 70px;
+  }
+  .header .nav .menu > li > a {
+    display: block;
+    padding: 30px 0;
+    font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+      sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .header .nav .menu > li > a span {
+    margin: 0 -20px;
+    text-align: center;
+    transition: all 0.1s;
+  }
+  .header .nav .menu > li .menu-submenu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 140px;
+    transform: translateX(-35%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 84px 0 40px 0;
+  }
+  .header .nav .menu .menu-submenu li a {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .icon {
+    margin-top: 0;
+  }
+  .icon ul .login {
+    display: none;
+  }
+}
+@media screen and (min-width:992px) {
+  .icon ul .search .search-box fieldset .search-form input {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width:768px) {
+  .header {
+    height: 80px;
+  }
+  .icon ul li > a {
+    width: 20px;
+    height: 20px;
+  }
+  .icon ul li img {
+    width: 20px;
+    height: auto;
+  }
+  .icon ul .user {
+    margin-left: 16px;
+  }
+}
+@media screen and (max-width:576px) {
+  .icon ul .search .search-box fieldset .search-form input {
+    font-size: 20px;
+    color: #eee;
+  }
+} */
+
+
+/* 메인영역 */
+.main {
+}
+/* 비주얼영역 */
+.visual {
+  width: 100%;
+  height: 911px;
+}
+.visual .sw-visual {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.visual .sw-visual .visual-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.visual .sw-visual .swiper-wrapper {
+}
+/* 건드리지말기 */
+.sw-visual .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.sw-visual .swiper-wrapper .swiper-slide > a {
+  display: block;
+  width: 100%;
+}
+.sw-visual .swiper-wrapper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sw-visual .swiper-wrapper .swiper-slide .s-text {
+  position: absolute;
+  width: 250px;
+  height: 240px;
+  top: 72%;
+  left: 42%;
+  transform: translateX(10%);
+  margin: 0 auto;
+  text-align: center;
+}
+.swiper-slide .s-text h1 {
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  color: #777777;
+  text-align: center;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.swiper-slide .s-text p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  padding-bottom: 10px;
+  color: #777777;
+  text-align: center;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.swiper-slide .s-text button {
+  display: block;
+  width: 120px;
+  height: 55px;
+  /* line-height: 55px; */
+  margin: 25px auto;
+  background-color: #ffcc00;
+  color: #fff;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 27.5%;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  margin: 0px 4px;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet-active {
+  background-color: #ffcf42;
+}
+
+/* 배너-01 */
+.banner01 {
+  background: url(../images/main_sec13_bg.png) no-repeat center;
+  height: 350px;
+}
+.banner01 .container {
+  padding-left: 160px;
+  padding-top: 60px;
+}
+.banner01 .container h1 {
+  display: inline-block;
+  color: #777;
+  font-size: 28px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+  letter-spacing: -0.45px;
+}
+.banner01 .container strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #777;
+  padding-bottom: 25px;
+  letter-spacing: -0.45px;
+}
+.banner01 .container p {
+  color: #777;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+  font-size: 16px;
+  letter-spacing: -1px;
+}
+.banner01 .container a {
+  display: block;
+  width: 195px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+  padding: 0 60px 0 50px;
+  text-align: center;
+  border: 1px solid #9b9b9b;
+  font-size: 16px;
+  font-weight: normal;
+  color: #777;
+  background: url(../images/icon_arrow.png) no-repeat;
+  background-position: 155px center;
+  letter-spacing: -0.45px;
+}
+
+/* 프로덕스 익스플레인-01 */
+.products-explain01 {
+}
+.products-explain01 .container {
+}
+.products-explain01 .middle-text {
+  padding-top: 50px;
+  margin: 0 auto 20px;
+}
+.products-explain01 .middle-text h1 {
+  color: #777;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.products-explain01 .middle-text p {
+  /* max-width: 700px; */
+  font-size: 17px;
+  font-weight: 400;
+  color: #777;
+  text-align: center;
+  letter-spacing: -0.45px;
+  padding-bottom: 10px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.products-explain01 .container .products-explain.btn-more {
+  display: block;
+  color: #777;
+  letter-spacing: -0.45px;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: right;
+  padding: 0 10px 20px;
+  /* transform: translateY(-555px); */
+}
+.products-explain01 .best-item {
+  margin-bottom: 100px;
+}
+.products-explain01 .best-item .best-item-list {
+}
+.products-explain01 .best-item .best-item-list li {
+  float: left;
+  margin-right: 16px;
+}
+.products-explain01 .best-item .best-item-list li:first-child {
+  margin-left: 10px;
+}
+.products-explain01 .best-item .best-item-list li:last-child {
+  margin-right: 0;
+}
+.products-explain01 .best-item .best-item-list li .image {
+  width: 350px;
+  height: 350px;
+}
+.products-explain01 .best-item .best-item-list li > a {
+  display: block;
+}
+.products-explain01 .best-item .best-item-list li .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.products-explain01 .best-item .best-item-list li .text {
+  letter-spacing: -0.45px;
+}
+.products-explain01 .best-item .best-item-list li .text > a {
+  display: block;
+  color: #9b9b9b;
+  margin: 20px 0 5px;
+  height: 30px;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.products-explain01 .best-item .best-item-list li .text span {
+  display: block;
+  color: #9b9b9b;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.products-explain01 .best-item .best-item-list li .text p {
+  color: #777;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 2px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.products-explain01 .best-item .best-item-list li .text .line-through {
+  text-decoration: line-through;
+  color: #9b9b9b;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+
+/* 배너-02 */
+.banner02 {
+  background: url(../images/main_sec05_bg.png) no-repeat center;
+  height: 437px;
+}
+.banner02 .container {
+  padding-left: 160px;
+  padding-top: 60px;
+}
+.banner02 .container h1 {
+  display: inline-block;
+  color: #777;
+  font-size: 28px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+  letter-spacing: -0.45px;
+}
+.banner02 .container strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #777;
+  padding-bottom: 25px;
+  letter-spacing: -0.45px;
+}
+.banner02 .container p {
+  color: #777;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+  font-size: 16px;
+  padding-bottom: 30px;
+  letter-spacing: -1px;
+}
+.banner02 .container .heritage {
+}
+.banner02 .container .heritage img {
+}
+.banner02 .container .heritage .st-park {
+}
+.banner02 .container a {
+  display: block;
+  width: 195px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+  padding: 0 60px 0 50px;
+  text-align: center;
+  border: 1px solid #9b9b9b;
+  font-size: 16px;
+  font-weight: normal;
+  color: #777;
+  background: url(../images/icon_arrow.png) no-repeat;
+  background-position: 155px center;
+  letter-spacing: -0.45px;
+}
+
+/* 프로덕스 익스플레인-02 */
+.products-explain02 {
+}
+.products-explain02 .container {
+}
+.products-explain02 .container .bottom-text {
+  padding-top: 50px;
+  margin: 0 auto 20px;
+}
+.products-explain02 .container .bottom-text h1 {
+  color: #777;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+.products-explain02 .container .bottom-text p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #777;
+  text-align: center;
+  letter-spacing: -0.45px;
+  padding-bottom: 10px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.products-explain02 .container .products-explain.btn-more {
+  display: block;
+  color: #777;
+  letter-spacing: -0.45px;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: right;
+  padding: 0 10px 20px;
+}
+.products-explain02 .best-item {
+  margin-bottom: 100px;
+}
+.products-explain02 .best-item .best-item-list {
+}
+.products-explain02 .best-item .best-item-list li {
+  float: left;
+  margin-right: 16px;
+}
+.products-explain02 .best-item .best-item-list li:first-child {
+  margin-left: 10px;
+}
+.products-explain02 .best-item .best-item-list li:last-child {
+  margin-right: 0;
+}
+.products-explain02 .best-item .best-item-list li .image {
+  width: 350px;
+  height: 350px;
+}
+.products-explain02 .best-item .best-item-list li .image > a {
+  display: block;
+}
+.products-explain02 .best-item .best-item-list li .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.products-explain02 .best-item .best-item-list li .text {
+  letter-spacing: -0.45px;
+}
+.products-explain02 .best-item .best-item-list li .text a {
+  display: block;
+  color: #9b9b9b;
+  margin: 20px 0 5px;
+  height: 30px;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.products-explain02 .best-item .best-item-list li .text span {
+  display: block;
+  color: #9b9b9b;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.products-explain02 .best-item .best-item-list li .text p {
+  color: #777;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 2px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+.products-explain02 .best-item .best-item-list li .text .line-through {
+  text-decoration: line-through;
+  color: #9b9b9b;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+}
+
+/* 배너-03 */
+.banner03 {
+  background: url(../images/main_sec09_bg.png) no-repeat center;
+  height: 348px;
+}
+.banner03 .container {
+  padding-left: 160px;
+  padding-top: 60px;
+}
+.banner03 .container h1 {
+  display: inline-block;
+  color: #777;
+  font-size: 28px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+  letter-spacing: -0.45px;
+}
+.banner03 .container strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #777;
+  padding-bottom: 25px;
+  letter-spacing: -0.45px;
+}
+.banner03 .container p {
+  color: #777;
+  font-family: "Montserrat", "Noto Sans KR", "Malgun Gothic", "Dotum",
+    "AppleGothic", sans-serif;
+  font-size: 16px;
+  letter-spacing: -1px;
+}
+.banner03 .container a {
+  display: block;
+  width: 247px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+  padding: 0 60px 0 50px;
+  text-align: center;
+  border: 1px solid #9b9b9b;
+  font-size: 16px;
+  font-weight: normal;
+  color: #777;
+  background: url(../images/icon_arrow.png) no-repeat;
+  background-position: 205px center;
+  letter-spacing: -0.45px;
+}
+
+/* 바텀 메뉴 */
+.bottom-menu {
+  background-color: #fff;
+  border-top: 1px solid #dcdcdc;
+}
+.bottom-menu .container {
+}
+.bottom-menu .bottom-menu-nav {
+  width: 770px;
+  margin: 0 auto;
+  padding: 25px 0 30px;
+}
+.bottom-menu .bottom-menu-nav > li {
+  float: left;
+  width: 100px;
+  margin-right: 30px;
+  vertical-align: top;
+  /* display: inline-block; */
+}
+.bottom-menu .bottom-menu-nav > li:last-child {
+  margin-right: 0;
+}
+.bottom-menu .bottom-menu-nav > li > a {
+  display: block;
+  padding: 10px 0 15px 0;
+  text-transform: none;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: -0.05px;
+  color: #777;
+  /* transition: all 0.1s; */
+}
+.bottom-menu .bottom-menu-nav > li:hover > a {
+  color: #f9ce42;
+}
+.bottom-menu .bottom-menu-nav > li .subdepth {
+  width: 100px;
+}
+.bottom-menu .bottom-menu-nav > li .bottom-menu-submenu {
+  width: 100%;
+}
+.bottom-menu .bottom-menu-nav > li .bottom-menu-submenu li {
+  margin-bottom: 15px;
+}
+.bottom-menu .bottom-menu-nav > li .bottom-menu-submenu li > a {
+  display: block;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.05px;
+  color: #777;
+}
+.bottom-menu .bottom-menu-nav > li .bottom-menu-submenu li:hover > a {
+  color: #f9ce42;
+}
+/* //메인 영역 */
+
+/* 푸터 영역 */
+.footer {
+}
+/* 푸터-탑 영역 */
+.footer .footer-top {
+  background-color: #f3f3f3;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+.footer .footer-top .container {
+  padding: 35px 0px 15px;
+}
+.footer .footer-top .container .footer-top-wrap {
+  padding-top: 0;
+  width: 777px;
+  height: 81px;
+  margin: 0 auto;
+  position: relative;
+}
+.footer .footer-top .footer-top-wrap p {
+  float: left;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+  line-height: 1;
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+.footer .footer-top .footer-top-wrap p span {
+  padding-right: 20px;
+  color: #7e868c;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+}
+.footer .footer-top .footer-top-wrap p strong {
+  font-weight: normal;
+  color: #777;
+  margin-right: 40px;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+}
+.footer .footer-top .footer-top-wrap p strong a {
+  display: inline-block;
+  font-weight: normal;
+  color: #777;
+}
+.footer .footer-top .footer-top-wrap .insta {
+  position: absolute;
+  width: 155px;
+  height: 30px;
+  right: 0;
+  bottom: 15px;
+}
+.footer .footer-top .footer-top-wrap .insta a {
+  display: block;
+  width: 155px;
+  height: 30px;
+  background: url(../images/ico_insta.png) no-repeat;
+}
+/* 푸터-바텀 영역 */
+.footer .footer-bottom {
+  background-color: #e5e5e5;
+}
+.footer .footer-bottom .container {
+}
+.footer .footer-bottom .container .footer-bottom-wrap {
+  width: 777px;
+  margin: 0 auto;
+  padding: 22px 0;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.45px;
+}
+.footer .footer-bottom .footer-bottom-wrap p {
+  float: left;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+}
+.footer .footer-bottom .footer-bottom-wrap p span {
+  font-weight: 600;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+}
+.footer .footer-bottom .footer-bottom-wrap a {
+  float: right;
+  font-size: 12px;
+  font-family: "Montserrat", "NotoSans", "Malgun Gothic", "Dotum", "AppleGothic",
+    sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 11px;
+  color: #777;
+  letter-spacing: -0.45px;
+}
+.footer .footer-bottom .footer-bottom-wrap .gotop {
+  position: fixed;
+  display: none;
+  width: 40px;
+  height: 40px;
+  right: 18px;
+  bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+.footer .footer-bottom .footer-bottom-wrap .gotop::before {
+  background: url(../images/keyboard_arrow_up_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg)
+    no-repeat 0 0;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 31%;
+  bottom: 13px;
+  /* z-index: 199; */
+}
+.footer .footer-bottom .footer-bottom-wrap .gotop:hover {
+  background-color: #dd101a;
+}
